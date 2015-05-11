@@ -1,0 +1,159 @@
+/**
+ * Created by 锋 on 2015/5/3.
+ */
+@charset "utf-8";
+@import "common.less";
+
+@add_pic_height: 50px;
+
+//---------------------------------------------------导航条----------------------------------------------------------
+.navbar-padding {
+  position: absolute;
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 0px;
+  line-height: @nav_bar_height;
+  cursor: hand;
+  //保存
+  .nav_save {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  //预览
+  .nav_view {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  //返回
+  .nav_back {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .nav_text {
+    color: #fff;
+  }
+
+}
+
+.main_container {
+  position: absolute;
+  padding-top: @nav_bar_height;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  //左边框架
+  .left_frame {
+    height: 100%;
+    background-color: #fefefe;
+    padding: 0px;
+    margin: 0px;
+
+
+    .add_pic {
+      cursor: pointer;
+      width: 100%;
+      height: @add_pic_height;
+      background: @common_nav_color_dark;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      color: white;
+      line-height: 50px;
+      font-size: 30px;
+      text-align: center;
+      z-index: 100;
+    }
+    ul {
+      overflow: scroll;
+      margin: 0px;
+      padding: 0 0 @add_pic_height 0;
+      width: 100%;
+      height: 100%;
+      li {
+        width: 100%;
+        height: 20%;
+        min-height: 200px;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        .item_container {
+          //图片列表单项div
+          width: 100%;
+          height: 100%;
+          background: #fefefe;
+          border-bottom: 1px dashed #BFBFBF;
+          transition: @common_animation_time;
+          text-align: center;
+          padding: 10%;
+          .item_text {
+            //列表的文字
+            width: 100%;
+            height: 20%;
+            text-align: center;
+            margin-top: 5px;
+            color: @common_nav_color_dark;
+            font-size: 2em;
+          }
+
+          .item_pic {
+            //列表的图片
+            width: 100%;
+            height: 80%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              border: 0px solid @common_nav_color_dark;
+              border-radius: 5px;
+              -moz-border-radius: 5px;
+            }
+          }
+
+        }
+        .item_container:hover {
+          background: @common_nav_color_light;
+        }
+
+      }
+    }
+  }
+  //中间框架
+  .center_frame {
+    height: 100%;
+    overflow: hidden;
+    padding-top: 30px;
+    border-left: 1px dashed #bfbfbf;
+    border-right: 1px dashed #bfbfbf;
+    //电视机容器
+    .tv_container {
+      position: inherit;
+      height: 420px;
+      width: 680px;
+      margin: 0 auto;
+      background: #505050 0 0 no-repeat;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -moz-background-size: 100% 100%;
+      -webkit-background-size: 100% 100%;
+      -o-background-size: 100% 100%;
+      background-size: 100% 100%;
+      .tv_content {
+        position: relative;
+        left: 20px;
+        top: 20px;
+        width: 640px;
+        height: 360px;
+        background-color: dodgerblue;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+      }
+    }
+  }
+  //右边框架
+  .right_frame {
+    background-color: #fefefe;
+    height: 100%;
+  }
+
+}

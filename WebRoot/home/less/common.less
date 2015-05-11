@@ -1,0 +1,418 @@
+/**
+ * Created by 锋 on 2015/5/2.
+ */
+
+@charset "utf-8";
+
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+  font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+@common_nav_color_light: #88dddd;
+@common_nav_color: #66bbbb;
+@common_nav_color_dark: #449999;
+@common_btn_color: #ccffcc;
+@nav_bar_height: 51px;
+@common_animation_time:0.3s;
+/**========================================公用区域=====================================================**/
+//svg矢量图
+.editicon {
+  background: url("../image/svg/ico_pro.svg?111") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  width: 35px;
+  height: 28px;
+  margin: 0 auto;
+}
+
+.cardbtn:hover {
+  color: rgb(80, 80, 80);
+}
+
+.cardbtn {
+  color: rgb(180, 180, 180);
+  cursor: pointer;
+  float: left;
+  text-align: center;
+  width: 50px;
+
+}
+
+//预览图标
+.opview .editicon {
+  background-position: 4px -138px;
+}
+
+.opview:hover .editicon {
+  background-position: -31px -138px;
+}
+
+.oppaid .editicon {
+  background-position: 7px -315px;
+}
+
+.oppaid:hover .editicon {
+  background-position: -33px -315px;
+}
+
+//发布图标
+.oppub .editicon {
+  background-position: 4px -35px;
+}
+
+.oppub:hover .editicon {
+  background-position: -31px -35px;
+}
+
+.opdep .editicon {
+  background-position: 4px 0;
+}
+
+.opdep:hover .editicon {
+  background-position: -30px 0;
+}
+
+//编辑图标
+.opedit .editicon {
+  background-position: 4px -176px;
+}
+
+.opedit:hover .editicon {
+  background-position: -31px -176px;
+}
+
+//数据图标
+.opdata:hover .editicon {
+  background-position: 14px -401px;
+}
+
+.opdata .editicon {
+  background-position: 14px -368px;
+}
+
+//删除图标
+.opdel .editicon {
+  background-position: 4px -104px;
+}
+
+.opdel:hover .editicon {
+  background-position: -31px -104px;
+}
+
+//复制图标
+.opcopy .editicon {
+  background-position: 4px -70px;
+}
+
+.opcopy:hover .editicon {
+  background-position: -30px -70px;
+}
+
+//更多图标
+.opmore .editicon {
+  background-position: 4px -208px;
+}
+
+.opmore:hover .editicon {
+  background-position: -32px -208px;
+}
+
+/**-----------------------------------------placehoder设置-----------------------------------------------**/
+/*默认状态颜色*/
+input::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+input::-moz-placeholder {
+  color: #ddd;
+}
+
+/*获取焦点后颜色变淡*/
+input:focus::-webkit-input-placeholder {
+  color: #eee;
+}
+
+input:focus::-moz-placeholder {
+  color: #eee;
+}
+
+/*默认状态颜色*/
+textarea::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+textarea::-moz-placeholder {
+  color: #ddd;
+}
+
+/*获取焦点后颜色变淡*/
+textarea:focus::-webkit-input-placeholder {
+  color: #eee;
+}
+
+textarea:focus::-moz-placeholder {
+  color: #eee;
+}
+
+/**----------------------------------------通用按钮设置--------------------------------------------------**/
+.btn_ok {
+  transition: @common_animation_time;
+  background-color: @common_nav_color;
+  border-color: @common_nav_color;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.btn_ok:hover {
+  background-color: @common_nav_color_dark;
+  border-color: @common_nav_color_dark;
+}
+
+.btn_ok:focus {
+  background-color: @common_nav_color_dark;
+  border-color: @common_nav_color_dark;
+}
+
+.btn_cancel {
+  transition: @common_animation_time;
+  background-color: #fff;
+  border-color: #ddd;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+
+.btn_cancel:hover {
+  background-color: #ddd;
+  border-color: #ddd;
+}
+
+.btn_cancel:focus {
+  background-color: #ddd;
+  border-color: #ddd;
+}
+
+/**========================================元素区域=====================================================**/
+
+//body 参数设置
+body {
+  background-color: #e6e6e6;
+}
+
+div {
+  display: block;
+}
+
+//导航条居中
+.navbar_center {
+  background-color: @common_nav_color;
+  padding-left: 100px;
+  padding-right: 100px;
+
+}
+
+.navbar-inverse {
+  background-color: @common_nav_color;
+  border-color: @common_nav_color_light;
+  //标题
+  .navbar_title {
+    color: #fff;
+    b {
+      color: @common_nav_color_dark;
+    }
+  }
+
+  //navbar 选项颜色
+  div {
+    ul {
+      .nav_unactive {
+        a {
+          color: #eee;
+        }
+      }
+      .nav_active {
+        background-color: @common_nav_color_dark;
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+//公共下拉框颜色
+.common_dropdown {
+  transition: @common_animation_time;
+  color: #fff;
+  background-color: @common_nav_color_dark;
+  border-color: @common_nav_color_light;
+}
+
+.common_dropdown:hover {
+  color: #fff;
+  background-color: @common_nav_color;
+  border-color: @common_nav_color_light;
+  outline-color: @common_nav_color_light;
+}
+
+.common_dropdown:focus {
+  color: #fff;
+  background-color: @common_nav_color;
+  border-color: @common_nav_color_light;
+  outline-color: @common_nav_color_light;
+}
+
+.common_dropdown:active {
+  color: #fff;
+  background-color: @common_nav_color;
+  border-color: @common_nav_color_light;
+  outline-color: @common_nav_color_light;
+}
+
+.dropdown_t_bg {
+
+  background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important; /*实现FF背景透明，文字不透明*/
+  filter: Alpha(opacity=80);
+  background: #fff; /*实现IE背景透明*/
+
+  .resolution_item {
+    transition: @common_animation_time;
+    color: #fff;
+  }
+ .resolution_item:hover {
+   color: #fff;
+    background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;
+  }
+
+}
+
+//------------------------------------------新建项目模态框的css----------------------------------------------------
+//模态框 icon 参数设置
+@model_icon_width: 100px;
+@model_icon_height: 100px;
+.model_custom_bg {
+  margin-top: 90px;
+  width: 700px;
+
+  min-width: 560px;
+  .modal-content {
+    .modal-header {
+      height: 50px;
+      font-size: medium;
+      font-weight: bold;
+      color: @common_nav_color_dark;
+    }
+    .modal-body {
+
+      background-color: @common_nav_color;
+      height: 400px;
+      .child {
+        height: 100%;
+      }
+      .left {
+        background-color: @common_nav_color;
+        padding-left: 0px;
+        //创建框标题
+        .title {
+          color: #fff;
+          margin: 0px;
+          padding: 0px;
+          font-weight: bold;
+        }
+        .after_top {
+          //头部以下的标题
+          margin-top: 30px;
+          margin-bottom: 10px;
+        }
+        //创建框基本信息
+        .info {
+          height: @model_icon_height;
+          div {
+            margin: 0px;
+            padding: 0px;
+          }
+          //上传图片css 隐藏
+          .mfile {
+            width: @model_icon_width;
+            height: @model_icon_height;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            filter: alpha(opacity=0);
+            -moz-opacity: 0;
+            -khtml-opacity: 0;
+            opacity: 0;
+          }
+          //上传图片div 显示
+          .mimg {
+            transition: @common_animation_time;
+            width: @model_icon_width;
+            height: @model_icon_height;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            border: 1px dashed rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding-top: 30px;
+            cursor: pointer;
+            p {
+              margin: 0px;
+              font-size: 12px;
+            }
+          }
+          .mimg:hover {
+            border: 1px dashed @common_nav_color_light;
+            color: @common_nav_color_light;
+          }
+
+          .info_edit {
+            padding-top: 10px;
+            padding-left: 5px;
+            input {
+              margin-bottom: 10px;
+              height: 26px;
+              background: none repeat scroll 0 0 @common_nav_color;
+              border: 1px solid @common_nav_color_light;
+              font-size: 12px;
+              padding: 0 5px;
+              color: #fff;
+              outline-color: @common_nav_color_light;
+            }
+            input:focus {
+              border-color: @common_nav_color_light;
+              color: #fff;
+
+            }
+            textarea {
+              resize: none;
+              height: 64px;
+              background: none repeat scroll 0 0 @common_nav_color;
+              border: 1px solid @common_nav_color_light;
+              font-size: 12px;
+              padding: 0 5px;
+              color: #fff;
+              outline-color: @common_nav_color_light;
+            }
+            textarea:focus {
+              border-color: @common_nav_color_light;
+              color: #fff;
+            }
+          }
+
+        }
+      }
+      .right {
+        background-color: @common_nav_color_dark;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

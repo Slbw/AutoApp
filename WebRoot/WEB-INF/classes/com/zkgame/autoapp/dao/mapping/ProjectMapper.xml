@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zkgame.autoapp.dao.mapper.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.zkgame.autoapp.model.Project" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="desc" property="desc" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime"  />
+    <result column="publish_time" property="publishTime" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+  	id, name, img, desc, user_id, update_time, publish_time, content
+  </sql>
+  <!-- 查找记录 -->
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_project
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <!-- 删除指定记录 -->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_project
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <!-- 新增记录 -->
+  <insert id="insert" parameterType="com.zkgame.autoapp.model.Project" useGeneratedKeys="true" keyProperty="id">
+    insert into t_project (
+    id, name, img, desc, user_id, update_time, publish_time, content
+    )
+    values (
+    #{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{updateTime}, #{publishTime,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}
+    )
+  </insert>
+  <!-- 新增记录 -->
+  <insert id="insertSelective" parameterType="com.zkgame.autoapp.model.Project" useGeneratedKeys="true" keyProperty="id">
+    insert into t_project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    	<if test="id != null" >
+        id,
+      </if>
+    	<if test="name != null" >
+        name,
+      </if>
+    	<if test="img != null" >
+        img,
+      </if>
+    	<if test="desc != null" >
+        desc,
+      </if>
+    	<if test="userId != null" >
+        user_id,
+      </if>
+    	<if test="updateTime != null" >
+        update_time,
+      </if>
+    	<if test="publishTime != null" >
+        publish_time,
+      </if>
+    	<if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="id != null" >
+    		#{id,jdbcType=INTEGER},
+      </if>
+    	<if test="name != null" >
+    		#{name,jdbcType=VARCHAR},
+      </if>
+    	<if test="img != null" >
+    		#{img,jdbcType=VARCHAR},
+      </if>
+    	<if test="desc != null" >
+    		#{desc,jdbcType=VARCHAR},
+      </if>
+    	<if test="userId != null" >
+    		#{userId,jdbcType=INTEGER},
+      </if>
+    	<if test="updateTime != null" >
+    		#{updateTime},
+      </if>
+    	<if test="publishTime != null" >
+    		#{publishTime,jdbcType=INTEGER},
+      </if>
+    	<if test="content != null" >
+    		#{content,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <!-- 修改指定记录 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkgame.autoapp.model.Project" >
+    update t_project
+    <set>
+    	<if test="name != null" >
+    		name = #{name,jdbcType=VARCHAR},
+      </if>
+    	<if test="img != null" >
+    		img = #{img,jdbcType=VARCHAR},
+      </if>
+    	<if test="desc != null" >
+    		desc = #{desc,jdbcType=VARCHAR},
+      </if>
+    	<if test="userId != null" >
+    		user_id = #{userId,jdbcType=INTEGER},
+      </if>
+    	<if test="updateTime != null" >
+    		update_time = #{updateTime},
+      </if>
+    	<if test="publishTime != null" >
+    		publish_time = #{publishTime,jdbcType=INTEGER},
+      </if>
+    	<if test="content != null" >
+    		content = #{content,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <!-- 修改指定记录 -->
+  <update id="updateByPrimaryKey" parameterType="com.zkgame.autoapp.model.Project" >
+    update t_project
+    set 
+	  	id = #{id,jdbcType=INTEGER}, 
+	  	name = #{name,jdbcType=VARCHAR}, 
+	  	img = #{img,jdbcType=VARCHAR}, 
+	  	desc = #{desc,jdbcType=VARCHAR}, 
+	  	user_id = #{userId,jdbcType=INTEGER}, 
+	  	update_time = #{updateTime}, 
+	  	publish_time = #{publishTime,jdbcType=INTEGER}, 
+	  	content = #{content,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <!-- 按条件查询(可分页) -->
+  <select id="selectByParams" parameterType="java.util.Map" resultMap="BaseResultMap">
+  	select
+    <include refid="Base_Column_List" />
+    from t_project
+    <where>
+    	<if test="id != null" >
+    		AND id = #{id}
+      </if>
+    	<if test="name != null" >
+    		AND name = #{name}
+      </if>
+    	<if test="img != null" >
+    		AND img = #{img}
+      </if>
+    	<if test="desc != null" >
+    		AND desc = #{desc}
+      </if>
+    	<if test="userId != null" >
+    		AND user_id = #{userId}
+      </if>
+    	<if test="updateTime != null" >
+    		AND update_time = #{updateTime}
+      </if>
+    	<if test="publishTime != null" >
+    		AND publish_time = #{publishTime}
+      </if>
+    	<if test="content != null" >
+    		AND content = #{content}
+      </if>
+    </where>
+    <if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if>
+  </select>
+  <!-- 按条件查询总数 -->
+  <select id="selectCntByParams" parameterType="java.util.Map" resultType="java.lang.Integer">
+  	select
+    count(*)
+    from t_project
+    <where>
+    	<if test="id != null" >
+    		AND id = #{id}
+      </if>
+    	<if test="name != null" >
+    		AND name = #{name}
+      </if>
+    	<if test="img != null" >
+    		AND img = #{img}
+      </if>
+    	<if test="desc != null" >
+    		AND desc = #{desc}
+      </if>
+    	<if test="userId != null" >
+    		AND user_id = #{userId}
+      </if>
+    	<if test="updateTime != null" >
+    		AND update_time = #{updateTime}
+      </if>
+    	<if test="publishTime != null" >
+    		AND publish_time = #{publishTime}
+      </if>
+    	<if test="content != null" >
+    		AND content = #{content}
+      </if>
+    </where>
+  </select>
+</mapper>

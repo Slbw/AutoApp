@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AutoApp.com | 简单、强大的HTML5创作工具。移动化社交化的时代，轻、快、优雅，AutoApp完美呈现！">
+    <meta name="keywords" content="AutoApp, AutoApp.com, AutoApp微信, AutoApp创作, AutoApp平台, HTML5, AutoApp APP">
+    <title>AutoApp 简单、强大的HTML5创作平台</title>
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!--我自己的css-->
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-static-top navbar_center">
+    <div class="navbar-header ">
+        <a class="navbar-brand navbar_title" href="#"><b>Auto</b>App</a>
+    </div>
+
+    <div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav_unactive"><a href="#">slbw</a></li>
+            <li class="nav_active"><a href="#">项目</a></li>
+            <li class="nav_unactive"><a href="#">通知</a></li>
+            <li class="nav_unactive"><a href="#">帮助</a></li>
+            <li class="nav_unactive"><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container_center">
+    <!-- 主页面 -->
+    <div class="main_bg">
+        <!-- 按钮触发模态框 -->
+        <div class="add_project" data-toggle="modal"
+             data-target="#newEvent">
+            <span class="glyphicon glyphicon-plus"></span>新建项目
+        </div>
+        <ul class="event_list">
+            <li class="event_item">
+                <div class="event_logo">
+                    <img src="http://resource.maka.im/get?img=id/K5DSC2QC65YP8Y4N0ZUE/crop/637.5680473372781x637.5680473372781a0a369/25.09536051378667">
+                </div>
+                <div class="event_info">
+                    <div class="etitle">
+                        <p datatype="input">餐饮-西餐厅-展示</p>
+                    </div>
+                    <div class="econtent">
+                        <p datatype="textarea">一杯咖啡，一丝情调；适合各种情调类实体店展示。</p>
+                    </div>
+
+                    <div class="etime">
+                        <span>发布时间：2015-05-02 13:07:14</span><span>最后修改时间：2015-05-02 13:07:28</span>
+                    </div>
+                </div>
+                <div class="event_functions">
+                    <div class="evisite">
+                        <ul>
+                            <li><a href="javascript:void(0)"
+                                    >查看数据</a>
+                            </li>
+                            <!-- <li style="float:right; margin-right:10px">查看数据</li> -->
+                        </ul>
+
+                    </div>
+                    <div class="ebutton">
+                        <ul>
+                            <li>
+                                <div class="cardbtn opview">
+                                    <i class="editicon"></i>
+                                    <span>预览</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cardbtn opedit">
+                                    <i class="editicon"></i>
+                                    <span>编辑</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+</div>
+
+
+<!--------------------------------------- 模态框 添加事件（Modal） ------------------------------------->
+<div class="modal fade" id="newEvent" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog model_custom_bg">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                创建您的项目
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-8 child left">
+                    <div class="title">
+                        项目设置
+                    </div>
+                    <div class="info">
+                        <div class="col-xs-3">
+                            <input type="file" class="mfile" data-url="http://img.maka.im/maka/app/gfile/public/p/upload">
+                            <div class="mimg">
+                                <p>+</p>
+                                <p>更换封面</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-9 info_edit">
+                            <input type="text" class="col-xs-12" placeholder="请填写项目标题" name="title" maxlength="20">
+                            <textarea placeholder="请填写项目描述" class="col-xs-12" name="content" maxlength="70"></textarea>
+                        </div>
+                    </div>
+                    <div class="title after_top">
+                        屏幕设置
+                    </div>
+
+
+
+                    <div class="btn-group">
+                        <button type="button" class="btn  common_dropdown">请选择分辨率</button>
+                        <button type="button" class="btn  dropdown-toggle common_dropdown" data-toggle="dropdown" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">下拉列表</span>
+                        </button>
+                        <ul class="dropdown_t_bg dropdown-menu " role="menu">
+                            <li><a class="resolution_item">1920*1080</a></li>
+                            <li><a class="resolution_item">1280*720</a></li>
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-xs-4 child right"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消创建</button>
+                <button type="button" class="btn btn-primary btn_ok">
+                    创建项目
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="../js/jquery.nicescroll.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+</html>
